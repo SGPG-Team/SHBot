@@ -66,8 +66,6 @@ class FAQs(commands.Cog, name="FAQ команды"):
 	async def main(self, msg):
 		if msg.author.bot:
 			return
-		if msg.guild != None:
-			return
 		segments = re.findall(r'(?:^\?|\*\*\?\*\*)([^?*]+)(?:\*\*\?\*\*)*?', msg.content)
 		if segments == []:
 			return
