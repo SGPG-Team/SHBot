@@ -19,6 +19,6 @@ class SLBot(commands.Bot):
         print(f"User: {bot.user} (ID: {bot.user.id})")
 
 intents = discord.Intents.all()
-bot = SLBot(command_prefix="$sudo ", intents=intents)
+bot = SLBot(command_prefix=["$sudo ", "!"], intents=intents)
 
 bot.run(config.DISCORD_API_TOKEN)
