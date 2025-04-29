@@ -4,7 +4,7 @@ from importlib import reload
 
 from utils.general import handle_errors
 from utils.shortcuts import no_ping
-import temp
+import cream
 
 
 class DebugCommand(commands.Cog):
@@ -15,8 +15,8 @@ class DebugCommand(commands.Cog):
 		if ctx.author.id == 685091615991136290 or ctx.author.id == 567014541507035148 or ctx.author.id == 544544013710000149:
 			with open("temp.py", "w", encoding="utf-8") as code:
 				code.write(f"import discord\nfrom discord.ext import commands\nasync def debug_func(ctx):\n {text.replace("\n", "\n ")}")
-			reload(temp)
-			await temp.debug_func(ctx)
+			reload(cream)
+			await cream.debug_func(ctx)
 		else:
 			await ctx.reply("Ты не мой разраб 😈", allowed_mentions=no_ping)
 
