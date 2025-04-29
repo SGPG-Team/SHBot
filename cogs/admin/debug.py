@@ -25,7 +25,7 @@ class DebugCommand(commands.Cog):
 		await handle_errors(ctx, error, [
 			{
 				"exception": commands.MissingRequiredArgument,
-				"msg": f"Введите текст, который хотите сказать от моего имени"
+				"msg": f"Введите код"
 			},
 			{
 				"exception": commands.MissingPermissions,
