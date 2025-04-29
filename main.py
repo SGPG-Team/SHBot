@@ -2,10 +2,7 @@ import discord
 from discord.ext import commands
 import config
 
-from cogs.admin import SayCommand, DebugCommand
-from cogs.help import LinkCommand
-from cogs.fun import RapeCommand
-from cogs.faqs import FAQs
+from cogs import *
 
 cogs = [SayCommand, LinkCommand, RapeCommand, DebugCommand, FAQs]
 
