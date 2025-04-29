@@ -14,7 +14,7 @@ class DebugCommand(commands.Cog):
 	async def debug(self, ctx, *, text: str):
 		if ctx.author.id == 685091615991136290 or ctx.author.id == 567014541507035148 or ctx.author.id == 544544013710000149:
 			with open("temp.py", "w", encoding="utf-8") as code:
-				code.write(f"""import discord\nfrom discord.ext import commands\nasync def debug_func(ctx):\n {text.replace("\n", "\n ")}""")
+				code.write("import discord\nfrom discord.ext import commands\nasync def debug_func(ctx):\n" + text.replace("\n", "\n "))
 			reload(cream)
 			await cream.debug_func(ctx)
 		else:
