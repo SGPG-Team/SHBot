@@ -7,7 +7,7 @@ from utils import handle_errors
 class RapeCommand(commands.Cog):
 	@commands.has_permissions(ban_members=True)
 	@commands.hybrid_command(
-		aliases=["рейп", "рейпнуть"],
+		aliases=["рейп", "рейпнуть", ":grape:", "🍇"],
 		description="**Админская команда.** RAPE MEMBER.",
 		usage="`/rape <пользователь>`",
 		help="")
