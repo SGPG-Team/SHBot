@@ -106,4 +106,3 @@ class FAQs(commands.Cog, name="FAQ команды"):
 			else:
 				#answer += "\n-# Источник: [AntBot](<https://github.com/FuncFusion/antbot>)"
 				await msg.channel.send(answer, files=files, allowed_mentions=no_ping)
-		
