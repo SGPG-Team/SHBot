@@ -12,7 +12,7 @@ class BotPing(commands.Cog):
 	async def main(self, msg):
 		if msg.author == self.bot.user:
 			return
-		if msg.content.strip() == ("<@1196573758757028021>"):
+		if msg.content.strip() == ("<@1360341683014729979>"):
 			embed = discord.Embed(
 				description=f"Привет! Я многофункциональный дискорд бот, созданный <@685091615991136290> и <@567014541507035148> и предназначенный чисто для этого сервера SGPG Team. Моя главная цель — помочь вам в изучении команд, датапаков и ресурспаков, но я также имею и другие интересные функции", 
 				color=no_color)
@@ -26,11 +26,11 @@ class BotPingView(discord.ui.View):
 		self.add_item(discord.ui.Button(
 			label="Исходный код",
 			emoji=f"{Emojis.github}",
-			url="https://github.com/FuncFusion/antbot"
+			url="https://github.com/SGPG-Team/SHBot"
 		))
 		self.add_item(discord.ui.Button(
 			label="Предложить идею/зарепортить баг",
-			emoji=f"🔗",
-			url="https://discord.com/channels/914772142300749854/1276169141572730880"
+			emoji="🔗",
+			url="https://discord.com/channels/1343257023432626268/1360526871669772341"
 		))
 	
