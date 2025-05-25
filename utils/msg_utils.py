@@ -1,4 +1,5 @@
 class Emojis:
+    github = "<:github:1376254368965202080>"
     clueless = "<:clueless:1360349640880554044>"
     fabric = "<:fabric:1360349466376278128>"
     kotlin = "<:kotlin:1360349544810025022>"
