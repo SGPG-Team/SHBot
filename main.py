@@ -13,7 +13,7 @@ class SLBot(commands.Bot):
     async def setup_hook(self):
         for cog in cogs:
             await self.add_cog(cog(self))
-        self.add_view(BotPingView)
+        self.add_view(BotPingView())
 
         await self.tree.sync()
 
