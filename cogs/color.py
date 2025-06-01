@@ -9,7 +9,6 @@ hex_re = compile("#?[\da-fA-F]{6}")
 
 
 class ColorCommand(commands.Cog):
-	@commands.has_permissions(ban_members=True)
 	@commands.hybrid_command(
 		aliases=["колор", "цвет"],
 		description="Изменяет цвет ника",
