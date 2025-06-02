@@ -18,11 +18,13 @@ class ColorCommand(commands.Cog):
 	
 	async def color(self, ctx: commands.Context, color: str):
 		if hex_re.match(color):
-			if len(color < 5):
+			if len(color) < 5:
 				color = color.replace("#", "")
 				color = color[0]*2+color[1]*2+color[2]*2
 		else:
 			raise ValueError("Wrong color")
+		color == "#" + color if not color.startswith("#") else color
+		
 		roles = ctx.author.roles
 		for role in roles:
 			if hex_re.match(role.name):
@@ -31,6 +33,7 @@ class ColorCommand(commands.Cog):
 		else:
 			color_role = await ctx.guild.create_role()
 			await ctx.author.add_roles(color_role)
+
 		await color_role.edit(
 			color=int(color.replace("#", ""), 16),
 			name=color
