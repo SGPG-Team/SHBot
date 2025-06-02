@@ -5,7 +5,7 @@ from discord import app_commands
 from utils import handle_errors
 from re import compile
 
-hex_re = compile("#?[\da-fA-F]{6}")
+hex_re = compile("#?([\da-fA-F]{6}|[\da-fA-F]{3})")
 
 
 class ColorCommand(commands.Cog):
@@ -18,7 +18,11 @@ class ColorCommand(commands.Cog):
 	@app_commands.describe(color="Цвет в формате (h)gex")
 	
 	async def color(self, ctx: commands.Context, color: str):
-		if not hex_re.match(color):
+		if hex_re.match(color):
+			if len(color < 5):
+				color = color.replace("#", "")
+				color = color[0]*2+color[1]*2+color[2]*2
+		else:
 			raise ValueError("Wrong color")
 		roles = ctx.author.roles
 		for role in roles:
@@ -38,7 +42,7 @@ class ColorCommand(commands.Cog):
 	async def color_error(self, ctx, error):
 		await handle_errors(ctx, error, [
 			{
-				"exception": ValueError,
+				"contains": "Wrong color",
 				"msg": "Для кого написано в гекс формате воодить"
 			}
 		])
