@@ -23,7 +23,8 @@ class ColorCommand(commands.Cog):
 				color = color[0]*2+color[1]*2+color[2]*2
 		else:
 			raise ValueError("Wrong color")
-		color == "#" + color if not color.startswith("#") else color
+		color = color.upper()
+		color = "#" + color if not color.startswith("#") else color
 		
 		roles = ctx.author.roles
 		for role in roles:
