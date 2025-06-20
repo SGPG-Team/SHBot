@@ -4,7 +4,7 @@ import config
 
 from cogs import *
 
-cogs = [SayCommand, LinkCommand, RapeCommand, DebugCommand, FAQs, BotPing, SGexCommand, ColorCommand]
+cogs = [SayCommand, LinkCommand, RapeCommand, DebugCommand, FAQs, BotPing, SGexCommand, ColorCommand, ZaebalCommand]
 
 class SLBot(commands.Bot):
     def __init__(self, *, intents: discord.Intents, command_prefix: str):
