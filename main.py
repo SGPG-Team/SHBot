@@ -4,7 +4,9 @@ import config
 
 from cogs import *
 
-cogs = [SayCommand, LinkCommand, RapeCommand, DebugCommand, FAQs, BotPing, SGexCommand, ColorCommand, ZaebalCommand]
+cogs = [SayCommand, LinkCommand, RapeCommand, DebugCommand, FAQs, BotPing, TikTokCommand, SGexCommand, ColorCommand, ZaebalCommand]
+views = [BotPingView, TiktokImageView]
+
 
 class SLBot(commands.Bot):
     def __init__(self, *, intents: discord.Intents, command_prefix: str):
@@ -13,7 +15,8 @@ class SLBot(commands.Bot):
     async def setup_hook(self):
         for cog in cogs:
             await self.add_cog(cog(self))
-        self.add_view(BotPingView())
+        for view in views:
+            self.add_view(view())
 
         await self.tree.sync()
 

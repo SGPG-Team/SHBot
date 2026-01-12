@@ -7,3 +7,4 @@ from cogs.bot_info import BotPing, BotPingView
 from cogs.sgex import SGexCommand
 from cogs.color import ColorCommand
 from cogs.zaebal import ZaebalCommand
+from cogs.tiktok import TikTokCommand, TiktokImageView
